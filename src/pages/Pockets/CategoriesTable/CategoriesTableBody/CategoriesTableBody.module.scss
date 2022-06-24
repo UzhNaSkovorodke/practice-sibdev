@@ -1,0 +1,38 @@
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 23px;
+}
+
+.contentWrapper {
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.categoryItem {
+  min-width: 240px;
+  display: flex;
+  justify-content: space-between;
+  &:last-child .categoryItemColumn {
+    padding-bottom: 18px;
+  }
+}
+
+.categoryItemColumn {
+  width: 125px;
+  padding-bottom: 11px;
+}
+
+.rightColumnItem {
+  border-left: 1px solid hsla(210, 16%, 93%, 1);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rightColumnItemText {
+  width: 90px;
+}

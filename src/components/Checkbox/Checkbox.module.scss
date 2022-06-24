@@ -1,0 +1,37 @@
+@use '../../assets/styles/colors';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.pseudoCheckbox {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid hsla(255, 11%, 85%, 1);
+  border-radius: 3px;
+  position: relative;
+
+  &__checked {
+    border-color: colors.$brand;
+  }
+
+  &__checked::after {
+    content: '✔';
+    color: colors.$brand;
+    line-height: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 0px;
+    left: 2px;
+  }
+}
+
+.hiddenInput {
+  display: none;
+}

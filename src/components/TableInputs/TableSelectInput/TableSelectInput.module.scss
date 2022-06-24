@@ -1,0 +1,20 @@
+@use '../../../assets/styles/colors';
+
+.selector {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  &:disabled {
+    color: black;
+    cursor: default;
+  }
+}
+
+.choosedOption {
+  text-align: center;
+}
+
+.defaultOption {
+  text-align: center;
+  color: colors.$default;
+}

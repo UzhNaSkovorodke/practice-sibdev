@@ -1,0 +1,43 @@
+@use '../../../assets/styles/colors';
+
+.input {
+  font-size: 18px;
+  width: 150px;
+  height: 40px;
+  padding: 0 10px;
+  border: none;
+  border-left: 1px solid hsla(210, 16%, 93%, 1);
+  border-bottom: 1px solid transparent;
+
+  &__align-left {
+    text-align: left;
+  }
+  &__align-center {
+    text-align: center;
+  }
+  &__align-right {
+    text-align: right;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+.input:focus-visible {
+  outline: none;
+  border-bottom: 1px solid colors.$brand;
+
+  &::placeholder {
+    opacity: 0;
+  }
+}
+
+.input::placeholder {
+  text-align: center;
+}
+
+.input:first-child {
+  border-left: none;
+}

@@ -1,0 +1,44 @@
+@use '../../assets/styles/colors';
+
+.input {
+  font-size: 12px;
+  width: 100%;
+  height: 40px;
+  padding: 8px 53px 8px 15px;
+  border: 1px solid hsla(240, 8%, 75%, 1);
+  border-radius: 5px;
+}
+
+.input__error {
+  border-color: colors.$error;
+  background-color: hsla(0, 79%, 93%, 1);
+}
+
+.inputErrorText {
+  margin-top: -8px;
+  padding-top: 2px;
+  padding-bottom: 10px;
+  border-radius: 5px 5px 0 0;
+  background-color: hsla(0, 79%, 93%, 1);
+  position: relative;
+  top: 8px;
+}
+
+.input::placeholder {
+  color: colors.$secondary;
+}
+
+.input:focus-visible {
+  outline: none;
+  border-color: colors.$brand;
+}
+
+.labelWrapper {
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputWithButtonWrapper {
+  position: relative;
+}
