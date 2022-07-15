@@ -4,7 +4,7 @@ import TableItemButtons from '../TableItemButtons';
 
 const processServerDataIntoTableData = (serverData) => {
   return serverData.map((item) => {
-    const isIncome = item.category.category_type === 'income';
+    const isIncome = item.category?.category_type === 'income';
 
     return {
       date: (
@@ -14,7 +14,7 @@ const processServerDataIntoTableData = (serverData) => {
       ),
       category: (
         <Text align="center" color={isIncome ? 'success' : 'primary'}>
-          {item.category.name}
+          {item.category?.name || 'Доход'}
         </Text>
       ),
       amount: (
