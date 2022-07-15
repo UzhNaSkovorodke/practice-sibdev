@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { EditIcon, TrashIcon } from 'src/assets/icons';
 import { Button } from 'src/components';
 
-import { UpdateTransactionModal, DeleteTransactionModal } from '../../TableModals';
+import { DeleteTransactionModal } from '../../TableModals';
+import AddNewOrUpdateTransactionModal from '../../TableModals/AddNewOrUpdateTransactionModal';
 
 import styles from './TableItemButtons.module.scss';
 
@@ -32,7 +33,7 @@ const TableItemButtons = ({ item }) => {
           <TrashIcon />
         </Button>
       </div>
-      <UpdateTransactionModal item={item} isOpened={isEditOpened} handleClose={handleEditClose} />
+      <AddNewOrUpdateTransactionModal transaction={item} isOpened={isEditOpened} handleClose={handleEditClose} />
       <DeleteTransactionModal itemId={item.id} isOpened={isDeleteOpened} handleClose={handleDeleteClose} />
     </>
   );
