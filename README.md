@@ -1,63 +1,29 @@
-# NT
+# О Проекте
 
-Перед тем как начать работу, вам необходимо создать файл .env с переменной REACT_APP_BASE_URL, значением которой будет являться адрес сервера
+Это проект по практике SibDev. Проект в данном случае это приложение для учета средств и получении простой аналитики по категориям расходов и доходов, а также ведения финансовых целей. Приложение состоит из 3 страниц + регистрация.
+Первая страница: Дашборд. Это стартовая страница с возможность “быстрого доступа” ко всем ключевым действиям.
+Вторая страница: Аналитика. Здесь пользователь вносит транзакции, получает аналитику по категориям и видит общее положение своих финансов.
+Третья страница: Цели. Здесь иммитируются вклады в банк на цель.
 
-## Доступные скрипты
+## Библиотеки
 
 В директории проекта вы можете запустить:
+Приложение использует нижеперечисленные библиотеки:
+
+        "@reduxjs/toolkit": "^1.8.2",
+        "react": "^18.1.0",
+        "react-calendar": "^3.7.0",
+        "react-dom": "^18.1.0",
+        "react-redux": "^8.0.2",
+        "react-router-dom": "^6.3.0",
+        "react-scripts": "5.0.1",
+        "react-table": "^7.8.0",
+        "sass": "^1.52.1",
+        "web-vitals": "^2.1.4"
+
+## Скрипт запуска проекта
 
 ### `npm start`
 
-Запускает приложение в режиме разработчика.\
-Откройте [http://localhost:3000](http://localhost:3000) чтобы увидеть ваше приложение в браузере.
-
 Эта страница будет обновляться каждый раз, когда вы сохраняете какие-либо изменения.\
 Также вы сможете увидеть любые ошибки в консоли.
-
-### `npm run build`
-
-Собирает приложение для production в `build` папку.\
-Собирает React в production режиме и оптимизирует сборку для лучшей производительности.
-
-Сборка минифицирована и имена файлов включают хэши.\
-Ваше приложение готово для деплоя!
-
-Посмотрите раздел о [деплое](https://facebook.github.io/create-react-app/docs/deployment) для дополнительной информации.
-
-### `npm run lint`
-
-Запускает проверку кода с помощью ESLint. Выполняет проверку кода на соответствие код-стайлу и соблюдение общепринятых рекомендаций и договорённостей при написании кода.
-
-### `npm run prettify`
-
-Запускает форматирование кода согласно установленным ESLint и prettier правилам.
-
-## Дополнительно
-
-Дополнительную информацию вы можете найти в [Create React App документации](https://facebook.github.io/create-react-app/docs/getting-started).
-
-Для изучения React откройте [React документацию](https://reactjs.org/).
-
-### Разделение кода
-
-[https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Анализ размера сборки
-
-[https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Создание Прогрессивного Web приложения (PWA)
-
-[https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Продвинутая конфигурация
-
-[https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Деплой
-
-[https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### Если `npm run build` не минифицирует сборку
-
-[https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
