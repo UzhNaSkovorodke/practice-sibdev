@@ -8,10 +8,12 @@
 }
 
 .pseudoCheckbox {
-  width: 16px;
-  height: 16px;
-  border: 1.5px solid hsla(255, 11%, 85%, 1);
-  border-radius: 3px;
+  width: 24px;
+  height: 24px;
+  margin-left: 16px;
+  background: #070707;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
   position: relative;
 
   &__checked {
@@ -23,12 +25,10 @@
     color: colors.$brand;
     line-height: 12px;
     font-size: 12px;
-    font-weight: 700;
-    width: 14px;
-    height: 14px;
+    font-weight: 900;
     position: absolute;
-    top: 0px;
-    left: 2px;
+    top: 4px;
+    left: 5px;
   }
 }
 

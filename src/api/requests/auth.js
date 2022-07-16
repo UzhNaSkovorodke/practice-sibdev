@@ -34,7 +34,7 @@ const auth = async (credentials, callback, errorHandler) => {
         errorHandler(errorTexts.INVALID_CREDENTIALS);
         return;
       }
-      if (error?.details?.detail) errorHandler(error.details.detail);
+      if (error?.details?.detail) errorHandler(error.details);
     });
 };
 

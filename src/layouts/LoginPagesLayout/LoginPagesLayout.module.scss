@@ -1,13 +1,16 @@
 .pageWrapper {
-  padding-top: 110px;
+  padding-top: 60px;
 }
 
 .wrapper {
-  width: 407px;
-  padding: 20px 32px 52px;
+  width: 568px;
+  height: 580px;
+  padding: 20px 44px 52px;
   margin: 0 auto;
-  background-color: hsla(0, 0%, 100%, 1);
-  box-shadow: 0px 4px 24px 0px hsla(0, 0%, 0%, 0.06);
+  background: linear-gradient(145.94deg, #1a1c1e 1.45%, #22242c 93.91%);
+  box-shadow: 0px 12px 33px -8px rgba(48, 24, 134, 0.11);
+  border-radius: 24px;
+  white-space: pre-wrap;
 }
 
 .form {
@@ -16,8 +19,9 @@
 }
 
 .sublink {
-  width: 100%;
-  margin-top: 20px;
+  margin-top: 24px;
+  padding-left: 80px;
+  padding-right: 80px;
   display: flex;
   justify-content: space-around;
 }

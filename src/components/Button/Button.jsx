@@ -2,7 +2,7 @@ import { classnames } from 'src/utils';
 
 import styles from './Button.module.scss';
 
-const Button = ({ tabIndex, variant, bgColor, radius = 6, height, isDisabled, onClick, children }) => {
+const Button = ({ tabIndex, variant, bgColor, radius = 1000, height, isDisabled, onClick, children }) => {
   const buttonOnClick = (e) => {
     e.preventDefault();
     onClick && onClick();

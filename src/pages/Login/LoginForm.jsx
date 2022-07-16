@@ -33,32 +33,32 @@ const LoginForm = () => {
 
   return (
     <>
-      <Box mb={16} hElastic>
+      <Box mt={26} hElastic>
         <DefaultInput
           value={email}
           errorText={errorText}
           isError={!!errorText}
-          placeholder="johndoe@gmail.com"
-          labelText="Email"
+          placeholder="Введите почту"
           onFocus={handleOnFocus}
           onChange={onChangeLogin}
         />
       </Box>
       <Box mb={40}>
         <PasswordInput
-          labelText="Пароль"
           isError={!!errorText}
           onFocus={handleOnFocus}
           onChange={onChangePassword}
           additionalPseudoLabel={
-            <Link to={PATHNAMES.forgetPassword} textSize="xs">
-              Забыли пароль?
-            </Link>
+            <Box ml={16}>
+              <Link to={PATHNAMES.forgetPassword} textSize="m">
+                Забыли пароль?
+              </Link>{' '}
+            </Box>
           }
         />
       </Box>
       <Button isDisabled={!email || !password || !!errorText} variant="brand" onClick={authUser}>
-        <Text color="contrast" weight={700} align="center">
+        <Text color="contrast" weight={700} align="center" size="xl">
           Войти
         </Text>
       </Button>
