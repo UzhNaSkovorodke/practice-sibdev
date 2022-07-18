@@ -89,15 +89,20 @@ const RegisterForm = () => {
       <Box mb={32}>
         <Checkbox isChecked={isAgree} text="Я со всем согласен отпутите" onClick={onChangeIsAgree} />
       </Box>
-      <Button
-        isDisabled={!username || !email || !isAgree || !password || !!usernameError || !!emailError || !!passwordError}
-        variant="brand"
-        onClick={registerUser}
-      >
-        <Text weight={500} color="contrast" align="center" size="xl">
-          Зарегистрироваться
-        </Text>
-      </Button>
+
+      <Box ml={100}>
+        <Button
+          isDisabled={
+            !username || !email || !isAgree || !password || !!usernameError || !!emailError || !!passwordError
+          }
+          variant="brand"
+          onClick={registerUser}
+        >
+          <Text weight={500} color="contrast" align="center" size="xl">
+            Зарегистрироваться
+          </Text>
+        </Button>
+      </Box>
     </>
   );
 };
