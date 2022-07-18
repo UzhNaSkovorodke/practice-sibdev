@@ -16,10 +16,6 @@
   border-radius: 4px;
   position: relative;
 
-  &__checked {
-    border-color: colors.$brand;
-  }
-
   &__checked::after {
     content: '✔';
     color: colors.$brand;

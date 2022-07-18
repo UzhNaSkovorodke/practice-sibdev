@@ -57,11 +57,13 @@ const LoginForm = () => {
           }
         />
       </Box>
-      <Button isDisabled={!email || !password || !!errorText} variant="brand" onClick={authUser}>
-        <Text color="contrast" weight={700} align="center" size="xl">
-          Войти
-        </Text>
-      </Button>
+      <Box ml={100}>
+        <Button isDisabled={!email || !password || !!errorText} variant="brand" onClick={authUser}>
+          <Text color="contrast" weight={700} align="center" size="xl">
+            Войти
+          </Text>
+        </Button>
+      </Box>
     </>
   );
 };

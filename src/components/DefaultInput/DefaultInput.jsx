@@ -31,7 +31,7 @@ const DefaultInput = ({
           <Text align="center" color="white" size="xs">
             {errorText}
           </Text>
-        </div> //мб здесть
+        </div>
       )}
       <div className={styles.inputWithButtonWrapper}>
         <input
