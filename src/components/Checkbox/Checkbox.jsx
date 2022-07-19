@@ -20,7 +20,9 @@ const Checkbox = ({ isChecked, text, onClick }) => {
         tabIndex={0}
       />
       <Box ml={16}>
-        <Text color="brand">{text}</Text>
+        <Text size="m" color="white">
+          {text}
+        </Text>
       </Box>
       <input
         id={id}

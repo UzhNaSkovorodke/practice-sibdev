@@ -1,6 +1,6 @@
 import { useId } from 'react';
 
-import { Text } from 'src/components';
+import { Text, Box } from 'src/components';
 import { classnames } from 'src/utils';
 
 import InputLabel from '../InputLabel';
@@ -25,13 +25,10 @@ const DefaultInput = ({
   const inputId = useId();
   return (
     <>
-      <div className={styles.labelWrapper}>
-        {labelText && <InputLabel id={inputId} text={labelText} />}
-        {additionalPseudoLabel}
-      </div>
+      <div className={styles.labelWrapper}>{labelText && <InputLabel id={inputId} text={labelText} />}</div>
       {errorText && (
         <div className={styles.inputErrorText}>
-          <Text align="center" color="error" size="xs">
+          <Text align="center" color="white" size="xs">
             {errorText}
           </Text>
         </div>
@@ -46,6 +43,7 @@ const DefaultInput = ({
           onFocus={onFocus}
           onChange={onChange}
         />
+        <Box mt={16}>{additionalPseudoLabel}</Box>
         {inputButton}
       </div>
     </>

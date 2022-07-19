@@ -25,9 +25,9 @@ const RegisterForm = () => {
   const onEmailFocus = () => setEmailError('');
 
   const handleError = (error) => {
-    error?.username && setUsernameError(error.username[0]);
-    error?.password && setPasswordError(error.password[0]);
-    error?.email && setEmailError(error.email[0]);
+    error?.username && setUsernameError('Некорректный вод');
+    error?.password && setPasswordError('Некорректный вод');
+    error?.email && setEmailError('Некорректный вод');
   };
 
   const handleAuthSuccess = () => navigate(PATHNAMES.pockets);
@@ -58,49 +58,51 @@ const RegisterForm = () => {
 
   return (
     <>
-      <Box mb={16} hElastic>
+      <Box mb={0} hElastic>
         <DefaultInput
           value={username}
           isError={!!usernameError}
           errorText={usernameError}
-          placeholder="Vasya_1337"
-          labelText="Логин"
+          placeholder="Введите имя пользователя"
           onFocus={onUsernameFocus}
           onChange={onChangeName}
         />
       </Box>
-      <Box mb={16} hElastic>
+      <Box mb={0} hElastic>
         <DefaultInput
           value={email}
           isError={!!emailError}
           errorText={emailError}
-          placeholder="johndoe@gmail.com"
-          labelText="Почта"
+          placeholder="Введите почту"
           onFocus={onEmailFocus}
           onChange={onChangeEmail}
         />
       </Box>
-      <Box mb={16}>
+      <Box mb={0}>
         <PasswordInput
-          labelText="Пароль"
           isError={!!passwordError}
           errorText={passwordError}
           onFocus={onPasswordFocus}
           onChange={onChangePassword}
         />
       </Box>
-      <Box mb={16}>
+      <Box mb={32}>
         <Checkbox isChecked={isAgree} text="Я со всем согласен отпутите" onClick={onChangeIsAgree} />
       </Box>
-      <Button
-        isDisabled={!username || !email || !isAgree || !password || !!usernameError || !!emailError || !!passwordError}
-        variant="brand"
-        onClick={registerUser}
-      >
-        <Text weight={700} color="contrast" align="center">
-          Зарегистрироваться
-        </Text>
-      </Button>
+
+      <Box ml={100}>
+        <Button
+          isDisabled={
+            !username || !email || !isAgree || !password || !!usernameError || !!emailError || !!passwordError
+          }
+          variant="brand"
+          onClick={registerUser}
+        >
+          <Text weight={500} color="contrast" align="center" size="xl">
+            Зарегистрироваться
+          </Text>
+        </Button>
+      </Box>
     </>
   );
 };
