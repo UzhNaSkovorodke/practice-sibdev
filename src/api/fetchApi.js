@@ -52,16 +52,11 @@ const makeRequest = async (requestUrl, fetchOptions, additionalHeaders) => {
   });
   if (response.status === 404) throw new APIRequestError('Сервис недоступен');
   if (response.status === 401) {
-    if (response.status === 401) {
-      const refreshTokenLocal = storage.GET('refresh');
-      if (refreshTokenLocal) {
-        await refreshRequest(refreshTokenLocal, APIRequestError);
-        return makeRequest(requestUrl, fetchOptions, additionalHeaders);
-      } else {
-        storage.DELETE('access');
-        storage.DELETE('refresh');
-        logoutObserver.notify();
-      }
+    if (storage.GET('refresh')) {
+      await refreshRequest();
+      return makeRequest(requestUrl, fetchOptions, additionalHeaders);
+    } else {
+      logoutObserver.notify();
     }
   }
   const payload = response.status !== 204 ? await response.json() : undefined;
