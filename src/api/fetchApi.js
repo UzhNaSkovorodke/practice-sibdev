@@ -57,6 +57,7 @@ const makeRequest = async (requestUrl, fetchOptions, additionalHeaders) => {
       return makeRequest(requestUrl, fetchOptions, additionalHeaders);
     } else {
       logoutObserver.notify();
+      storage.DELETE('refresh');
     }
   }
   const payload = response.status !== 204 ? await response.json() : undefined;
