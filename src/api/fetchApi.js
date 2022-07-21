@@ -2,6 +2,7 @@ import URLs from 'src/consts/apiUrls';
 import { checkOptions } from 'src/utils/requests';
 
 import { logoutObserver } from './observers';
+import refreshRequest from './requests/refresh';
 import storage from './storage';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -51,7 +52,13 @@ const makeRequest = async (requestUrl, fetchOptions, additionalHeaders) => {
   });
   if (response.status === 404) throw new APIRequestError('Сервис недоступен');
   if (response.status === 401) {
-    logoutObserver.notify();
+    if (storage.GET('refresh')) {
+      await refreshRequest();
+      return makeRequest(requestUrl, fetchOptions, additionalHeaders);
+    } else {
+      logoutObserver.notify();
+      storage.DELETE('refresh');
+    }
   }
   const payload = response.status !== 204 ? await response.json() : undefined;
   if (!response.ok) throw new APIRequestError('Неизвестная ошибка', payload, response.status);

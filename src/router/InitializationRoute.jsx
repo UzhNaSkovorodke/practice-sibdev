@@ -5,6 +5,8 @@ import { logoutObserver } from 'src/api/observers';
 import { PATHNAMES } from 'src/consts';
 import { useLogout } from 'src/hooks';
 
+import storage from '../api/storage';
+
 const InitializationRoute = () => {
   const navigate = useNavigate();
   const handleLogout = useLogout();
@@ -12,7 +14,7 @@ const InitializationRoute = () => {
 
   useEffect(() => {
     if (isInit) return;
-    navigate(PATHNAMES.pockets);
+    !storage.GET('refresh') ? navigate(PATHNAMES.login) : navigate(PATHNAMES.pockets);
     setIsInit(true);
   }, [navigate, isInit]);
 
