@@ -32,14 +32,16 @@ const AddNewCategoryModal = ({ isOpened, handleClose }) => {
 
   return (
     <Modal isOpened={isOpened} title="Добавить категорию" handleClose={onCloseModal}>
-      <div className={styles.inputsContainer}>
-        <TableDefaultInput
-          radius="common"
-          value={name}
-          placeholder="Введите название категории"
-          onChange={handleOnChange}
-        />
-      </div>
+      <Box mb={32}>
+        <div className={styles.inputsContainer}>
+          <TableDefaultInput
+            radius="common"
+            value={name}
+            placeholder="Введите название категории"
+            onChange={handleOnChange}
+          />
+        </div>
+      </Box>
       <Box mb={48}>
         <Button radius={1000} height={53} variant="brand" onClick={handleAddNewCategory}>
           <Text weight={700} size="xl" color="contrast">

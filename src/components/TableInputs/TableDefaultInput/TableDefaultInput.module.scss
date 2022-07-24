@@ -1,5 +1,7 @@
 @use '../../../assets/styles/colors';
-
+.inputWrapper {
+  position: relative;
+}
 .input {
   color: white;
   font-size: 16px;
@@ -32,7 +34,12 @@
   &__chipRevert {
     width: 122px;
     border-radius: 0px 30px 30px 0px;
+    border-left: none;
   }
+}
+.inputIcon {
+  position: absolute;
+  top: 8px;
 }
 
 .input:focus-visible {

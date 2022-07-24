@@ -2,8 +2,8 @@ import { useState } from 'react';
 import ReactCalendar from 'react-calendar';
 import './TableDateInputCalendar.css';
 
-import { CalenderIcon } from 'src/assets/icons';
-import { Text, Popover, Box } from 'src/components';
+import { CalenderIcon, VectorIcon } from 'src/assets/icons';
+import { Text, Popover } from 'src/components';
 import { defaultInputStyles } from 'src/components/DefaultInput/DefaultInput';
 import { classnames } from 'src/utils';
 
@@ -54,12 +54,11 @@ const TableDateInput = ({ isError, min, max, value, onChange }) => {
         onClick={toggleOpen}
       >
         <div className={styles.textPosition}>
-          <Box mr={0} mt={7}>
-            <CalenderIcon />
-          </Box>
+          <CalenderIcon />
           <Text color={value ? 'white' : 'default'} size="m">
             {date || 'Дата'}
           </Text>
+          <VectorIcon className={styles.inputIcon} />
         </div>
       </button>
     </Popover>

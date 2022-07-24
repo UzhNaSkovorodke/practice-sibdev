@@ -5,4 +5,5 @@ import { ReactComponent as CrossInBoxIcon } from './crossInBoxIcon.svg';
 import { ReactComponent as EditIcon } from './editIcon.svg';
 import { ReactComponent as Eye } from './eyeOpened.svg';
 import { ReactComponent as TrashIcon } from './trashIcon.svg';
-export { AddIcon, ArrowIcon, CalenderIcon, CrossInBoxIcon, EditIcon, Eye, TrashIcon };
+import { ReactComponent as VectorIcon } from './vectorIcon.svg';
+export { AddIcon, ArrowIcon, CalenderIcon, CrossInBoxIcon, EditIcon, Eye, TrashIcon, VectorIcon };

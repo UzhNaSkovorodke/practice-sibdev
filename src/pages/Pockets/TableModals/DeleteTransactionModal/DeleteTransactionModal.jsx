@@ -20,16 +20,20 @@ const DeleteTransactionModal = ({ itemId, isOpened, handleClose }) => {
   return (
     <Modal isOpened={isOpened} handleClose={handleClose}>
       <div className={styles.deleteTextWrapper}>
-        <Text as="h1" color="white">
-          Удалить операцию?
-        </Text>
+        <Box mt={48} mb={32}>
+          <Text as="h1" color="white">
+            Удалить операцию?
+          </Text>
+        </Box>
       </div>
-      <Text size="m" weight={400} color="white" opacity="blur">
-        Вы не сможете отменить действие
-      </Text>
+      <Box mb={48}>
+        <Text className={styles.deleteTextWarning} size="m" weight={400} color="white" opacity="blur">
+          Вы не сможете отменить действие
+        </Text>
+      </Box>
       <div className={styles.deleteButtonsWrapper}>
         <Box ml={83} mr={4}>
-          <Button radius={1000} height={53} bgColor="dark" variant="delete" onClick={handleDeleteTransaction}>
+          <Button radius={1000} height={53} bgColor="dark" variant="delete" onClick={handleClose}>
             <Text weight={500} size="xl" color="brand">
               Назад
             </Text>

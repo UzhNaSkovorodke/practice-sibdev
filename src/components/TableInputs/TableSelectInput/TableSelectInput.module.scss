@@ -5,6 +5,8 @@
   -webkit-appearance: none;
   cursor: pointer;
   width: 224px;
+  border-left: none;
+  border-right: none;
   &:disabled {
     color: black;
     cursor: default;
