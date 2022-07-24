@@ -1,6 +1,16 @@
 import TableDefaultInput from '../TableDefaultInput';
 
-const TableAmountInput = ({ textAlign, isError, value, placeholder, maxLength, extraClasses, onError, onChange }) => {
+const TableAmountInput = ({
+  textAlign,
+  isError,
+  value,
+  placeholder,
+  maxLength,
+  extraClasses,
+  onError,
+  onChange,
+  radius,
+}) => {
   const handleOnChange = (event) => {
     const value = event.target.value;
     if (!value) onChange(event);
@@ -24,6 +34,7 @@ const TableAmountInput = ({ textAlign, isError, value, placeholder, maxLength, e
       maxLength={maxLength}
       extraClasses={extraClasses}
       onChange={handleOnChange}
+      radius={radius}
     />
   );
 };

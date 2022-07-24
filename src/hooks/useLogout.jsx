@@ -17,7 +17,7 @@ const useLogout = () => {
     dispatch(clearCategories());
 
     storage.DELETE('access');
-
+    storage.DELETE('refrash');
     navigate(PATHNAMES.login);
   };
 };

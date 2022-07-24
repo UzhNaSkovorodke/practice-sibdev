@@ -26,13 +26,15 @@ const ModalLayout = ({ title, handleClose, children }) => {
     <div className={styles.wrapper}>
       <div ref={contentRef} className={styles.layout}>
         <div className={styles.closeButton}>
-          <Button variant="ghost" onClick={handleClose}>
-            <CrossInBoxIcon />
-          </Button>
+          <Box mt={12} mr={20}>
+            <Button variant="ghost" onClick={handleClose}>
+              <CrossInBoxIcon />
+            </Button>
+          </Box>
         </div>
         {!!title && (
-          <Box pt={24} pb={28}>
-            <Text as="h2" size="xxl" color="primary" align="center">
+          <Box pt={48} pb={32}>
+            <Text as="h2" size="xxl" color="white" align="center">
               {title}
             </Text>
           </Box>

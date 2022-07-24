@@ -14,6 +14,7 @@ const TableDefaultInput = ({
   maxLength,
   extraClasses,
   onChange,
+  radius,
 }) => {
   return (
     <input
@@ -25,6 +26,7 @@ const TableDefaultInput = ({
         extraClasses,
         [defaultInputStyles.input__error, isError],
         styles[`input__align-${textAlign}`],
+        styles[`input-border__${radius}`],
       ])}
       placeholder={placeholder}
       onChange={onChange}

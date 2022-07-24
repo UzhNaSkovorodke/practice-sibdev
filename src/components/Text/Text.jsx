@@ -3,7 +3,7 @@ import { getDefaultTextColor, getDefaultTextWeight } from 'src/utils/Text';
 
 import styles from './Text.module.scss';
 
-const Text = ({ as: Wrapper = 'p', color, weight, size, children, align = 'left' }) => {
+const Text = ({ as: Wrapper = 'p', color, weight, size, children, align = 'left', opacity }) => {
   if (typeof children !== 'string') {
     throw new Error('Text component accepts only string children');
   }
@@ -23,6 +23,7 @@ const Text = ({ as: Wrapper = 'p', color, weight, size, children, align = 'left'
         styles[`weight__${textWeight}`],
         [styles[`size__${textSize}`], !!size],
         styles[`align__${align}`],
+        styles[`opacity__${opacity}`],
       ])}
     >
       {children}

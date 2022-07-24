@@ -4,6 +4,7 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
+  width: 224px;
   &:disabled {
     color: black;
     cursor: default;
@@ -12,9 +13,23 @@
 
 .choosedOption {
   text-align: center;
+  background: #191a23;
+  box-shadow: 0px 12px 33px -8px rgba(48, 24, 134, 0.11);
 }
 
 .defaultOption {
   text-align: center;
-  color: colors.$default;
+  color: colors.$white;
+}
+
+.input__icon {
+  width: 10px;
+  height: 7px;
+  position: absolute;
+  right: 14px;
+  top: 19px;
+}
+
+.inputWrapper {
+  position: relative;
 }
