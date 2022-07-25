@@ -7,21 +7,14 @@ import { Text, Popover } from 'src/components';
 import { defaultInputStyles } from 'src/components/DefaultInput/DefaultInput';
 import { classnames } from 'src/utils';
 
-import TableDateInputDeterminate from '../TableDateDeterminate/TableDateInputDeterminate';
 import { defaultTableInputStyles } from '../TableDefaultInput/TableDefaultInput';
 
 import styles from './TableDateInput.module.scss';
 
 const TableDateInput = ({ isError, min, max, value, onChange }) => {
   const [isOpened, setIsOpened] = useState(false);
-
-  const dateAraay = value?.split('-').reverse();
-  Number(dateAraay[0]) > 9
-    ? (dateAraay[0] = String(dateAraay[0].split(''))[0] + String(dateAraay[0].split(''))[2])
-    : (dateAraay[0] = String(dateAraay[0].split(''))[2]);
-  dateAraay[1] = TableDateInputDeterminate(dateAraay[1]);
-  let date = dateAraay.join(' ');
-  if (date === ' ') date = '';
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const date = new Date(value).toLocaleString('ru', options).slice(0, -3);
 
   const toggleOpen = () => setIsOpened(!isOpened);
   const handleClose = () => setIsOpened(false);
