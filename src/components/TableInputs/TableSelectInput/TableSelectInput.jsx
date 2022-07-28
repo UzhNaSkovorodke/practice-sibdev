@@ -1,52 +1,47 @@
 import { ArrowIcon } from 'src/assets/icons';
+import { defaultInputStyles } from 'src/components/DefaultInput/DefaultInput';
+import { classnames } from 'src/utils';
+
+import { defaultTableInputStyles } from '../TableDefaultInput/TableDefaultInput';
 
 import styles from './TableSelectInput.module.scss';
 
 const TableSelectInput = ({ value, isError, emptyListText, placeholder, selectOptions, onChange }) => {
-  let isOpen = true;
-  const buttonOnClick = (e) => {
-    const optionWrapper = document.getElementById('optionWrapperId');
-    if (isOpen === false) {
-      optionWrapper.style.display = 'block';
-      isOpen = true;
+  let isOpenoptionWrapper = true;
+  const settValue = (text, value) => {
+    document.getElementById('myButton').innerText = text;
+    document.getElementById('myButton').value = value;
+  };
+
+  const setoptionWrapper = () => {
+    if (isOpenoptionWrapper === true) {
+      document.getElementById('optionWrapper').style.display = 'none';
+      isOpenoptionWrapper = false;
     } else {
-      optionWrapper.style.display = 'none';
-      isOpen = false;
+      document.getElementById('optionWrapper').style.display = 'block';
+      isOpenoptionWrapper = true;
     }
   };
-  const onChangeCategory = (event) => {
-    let param = selectOptions.find((x) => x.id === Number(event.target.id)).name;
-    document.getElementById('myButton').innerText = param;
 
-    const optionWrapper = document.getElementById('optionWrapperId');
-    optionWrapper.style.display = 'none';
-    isOpen = false;
-
-    onChange(Number(event.target.id));
+  const changeCategory = (event) => {
+    onChange(event.target.id);
+    settValue(event.target.innerText, event.target.value);
+    setoptionWrapper();
   };
 
   return (
     <div className={styles.inputWrapper}>
       <ArrowIcon className={styles.input__icon} />
-      <button id="myButton" className={styles.myButton} onClick={buttonOnClick}>
+      <button id="myButton" value={value} className={styles.myButton} onClick={setoptionWrapper}>
         {placeholder}
       </button>
-      <div id="optionWrapperId" className={styles.optionWrapper}>
-        {selectOptions.length > 0 ? (
-          <>
-            <button className={styles.choosedOption} onClick={onChange}>
-              {placeholder}
-            </button>
-            {selectOptions.map((item) => (
-              <button key={item.id} id={item.id} className={styles.choosedOption} onClick={onChangeCategory}>
-                {item.name}
-              </button>
-            ))}
-          </>
-        ) : (
-          <div className={styles.defaultOption}>{emptyListText}</div>
-        )}
-      </div>
+      <ul id="optionWrapper" className={styles.optionWrapper}>
+        {selectOptions.map((item, index) => (
+          <li key={index} value={item.id} id={item.id} onClick={changeCategory} className={styles.choosedOption}>
+            {item.name}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

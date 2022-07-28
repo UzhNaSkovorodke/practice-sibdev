@@ -24,7 +24,7 @@
 .choosedOption {
   text-align: center;
   background: #15171c;
-  //я добавил
+  cursor: pointer;
   height: 37px;
   width: 280px;
   border: solid 1px #22242c;
@@ -57,6 +57,7 @@
 .myButton {
   width: 224px;
   height: 44px;
+  font-size: 16px;
   border-right: none;
   border-left: none;
   background: #17181c;
@@ -65,6 +66,7 @@
   position: relative;
 }
 .optionWrapper {
+  display: block;
   background: #15171c;
   position: absolute;
   width: 280px;
