@@ -1,5 +1,13 @@
 @use '../../../assets/styles/colors';
 
+.input__icon {
+  width: 10px;
+  height: 7px;
+  position: absolute;
+  right: 14px;
+  top: 19px;
+  z-index: 2;
+}
 .selector {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -15,8 +23,18 @@
 
 .choosedOption {
   text-align: center;
-  background: #191a23;
-  box-shadow: 0px 12px 33px -8px rgba(48, 24, 134, 0.11);
+  background: #15171c;
+  //я добавил
+  height: 37px;
+  width: 280px;
+  border: solid 1px #22242c;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  color: white;
+  &:hover {
+    background: #1f2229;
+  }
 }
 
 .defaultOption {
@@ -34,4 +52,23 @@
 
 .inputWrapper {
   position: relative;
+}
+
+.myButton {
+  width: 224px;
+  height: 44px;
+  border-right: none;
+  border-left: none;
+  background: #17181c;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  position: relative;
+}
+.optionWrapper {
+  background: #15171c;
+  position: absolute;
+  width: 280px;
+  top: 48px;
+  right: 0px;
+  box-shadow: 0px 12px 33px -8px rgba(48, 24, 134, 0.17);
 }

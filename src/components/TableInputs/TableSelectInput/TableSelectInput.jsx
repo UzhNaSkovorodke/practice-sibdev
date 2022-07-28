@@ -1,41 +1,52 @@
 import { ArrowIcon } from 'src/assets/icons';
-import { defaultInputStyles } from 'src/components/DefaultInput/DefaultInput';
-import { classnames } from 'src/utils';
-
-import { defaultTableInputStyles } from '../TableDefaultInput/TableDefaultInput';
 
 import styles from './TableSelectInput.module.scss';
 
 const TableSelectInput = ({ value, isError, emptyListText, placeholder, selectOptions, onChange }) => {
+  let isOpen = true;
+  const buttonOnClick = (e) => {
+    const optionWrapper = document.getElementById('optionWrapperId');
+    if (isOpen === false) {
+      optionWrapper.style.display = 'block';
+      isOpen = true;
+    } else {
+      optionWrapper.style.display = 'none';
+      isOpen = false;
+    }
+  };
+  const onChangeCategory = (event) => {
+    let param = selectOptions.find((x) => x.id === Number(event.target.id)).name;
+    document.getElementById('myButton').innerText = param;
+
+    const optionWrapper = document.getElementById('optionWrapperId');
+    optionWrapper.style.display = 'none';
+    isOpen = false;
+
+    onChange(Number(event.target.id));
+  };
+
   return (
     <div className={styles.inputWrapper}>
       <ArrowIcon className={styles.input__icon} />
-      <select
-        value={value}
-        disabled={!selectOptions.length}
-        className={classnames([
-          defaultTableInputStyles.input,
-          styles.selector,
-          [defaultInputStyles.input__error, isError],
-          [styles.defaultOption, !value],
-        ])}
-        onChange={onChange}
-      >
+      <button id="myButton" className={styles.myButton} onClick={buttonOnClick}>
+        {placeholder}
+      </button>
+      <div id="optionWrapperId" className={styles.optionWrapper}>
         {selectOptions.length > 0 ? (
           <>
-            <option value="" className={styles.choosedOption}>
+            <button className={styles.choosedOption} onClick={onChange}>
               {placeholder}
-            </option>
+            </button>
             {selectOptions.map((item) => (
-              <option key={item.id} value={item.id} className={styles.choosedOption}>
+              <button key={item.id} id={item.id} className={styles.choosedOption} onClick={onChangeCategory}>
                 {item.name}
-              </option>
+              </button>
             ))}
           </>
         ) : (
-          <option className={styles.defaultOption}>{emptyListText}</option>
+          <div className={styles.defaultOption}>{emptyListText}</div>
         )}
-      </select>
+      </div>
     </div>
   );
 };
