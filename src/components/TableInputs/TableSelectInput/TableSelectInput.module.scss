@@ -32,6 +32,9 @@
   border-right: none;
   border-bottom: none;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:hover {
     background: #1f2229;
   }
@@ -72,5 +75,5 @@
   width: 280px;
   top: 48px;
   right: 0px;
-  box-shadow: 0px 12px 33px -8px rgba(48, 24, 134, 0.17);
+  box-shadow: 0px 12px 33px -8px rgba(48, 24, 134, 0.413);
 }
