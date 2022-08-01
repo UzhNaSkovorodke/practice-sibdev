@@ -1,10 +1,6 @@
 import { useState } from 'react';
 
 import { ArrowIcon } from 'src/assets/icons';
-// import { defaultInputStyles } from 'src/components/DefaultInput/DefaultInput';
-// import { classnames } from 'src/utils';
-
-// import { defaultTableInputStyles } from '../TableDefaultInput/TableDefaultInput';
 
 import styles from './TableSelectInput.module.scss';
 
