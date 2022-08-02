@@ -124,20 +124,24 @@ const AddNewOrUpdateTransactionModal = ({ transaction, isOpened, handleClose }) 
   };
 
   return (
-    <Modal isOpened={isOpened} title="Добавить данные" handleClose={onCloseModal}>
+    <Modal isOpened={isOpened} title="Добавить операцию" handleClose={onCloseModal}>
       <div className={styles.buttonsWrapper}>
-        <Box mr={24}>
-          <Button bgColor={transactionType === 'expense' ? 'brand' : 'glass'} onClick={changeToExpense}>
+        <Button variant="chip" bgColor={transactionType === 'income' ? 'brand' : 'dark'} onClick={changeToIncome}>
+          <Box pt={5} pr={5} pb={5} pl={5}>
+            <Text color={transactionType === 'income' ? 'contrast' : 'neon'}>Доход +</Text>
+          </Box>
+        </Button>{' '}
+        <Box mr={0}>
+          <Button
+            variant="chipRevert"
+            bgColor={transactionType === 'expense' ? 'brand' : 'dark'}
+            onClick={changeToExpense}
+          >
             <Box pt={5} pr={5} pb={5} pl={5}>
-              <Text color={transactionType === 'expense' ? 'contrast' : 'primary'}>Расход</Text>
+              <Text color={transactionType === 'expense' ? 'contrast' : 'neon'}>Расход -</Text>
             </Box>
           </Button>
         </Box>
-        <Button bgColor={transactionType === 'income' ? 'brand' : 'glass'} onClick={changeToIncome}>
-          <Box pt={5} pr={5} pb={5} pl={5}>
-            <Text color={transactionType === 'income' ? 'contrast' : 'primary'}>Доход</Text>
-          </Box>
-        </Button>
       </div>
       <div className={styles.inputsContainer}>
         <TableDateInput isError={isDateError} max={new Date()} value={date} onChange={handleDateChange} />
@@ -151,13 +155,21 @@ const AddNewOrUpdateTransactionModal = ({ transaction, isOpened, handleClose }) 
             onChange={handleCategoryChange}
           />
         )}
-        <TableAmountInput isError={isAmountError} value={amount} placeholder="Сумма" onChange={handleAmountChange} />
+        <TableAmountInput
+          radius="chipRevert"
+          isError={isAmountError}
+          value={Math.round(amount)}
+          placeholder="Сумма"
+          onChange={handleAmountChange}
+        />
       </div>
-      <Button radius={0} height={53} variant="brand" onClick={handleCreateTransaction}>
-        <Text weight={700} size="xl" color="contrast">
-          Добавить
-        </Text>
-      </Button>
+      <Box mb={48}>
+        <Button radius={1000} height={53} variant="brand" onClick={handleCreateTransaction}>
+          <Text weight={700} size="xl" color="contrast">
+            Добавить
+          </Text>
+        </Button>
+      </Box>
     </Modal>
   );
 };

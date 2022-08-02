@@ -7,6 +7,9 @@
   &primary {
     color: colors.$primary;
   }
+  &neon {
+    color: #5d5fef;
+  }
   &secondary {
     color: colors.$secondary;
   }
@@ -82,5 +85,10 @@
   }
   &right {
     text-align: right;
+  }
+}
+.opacity__ {
+  &blur {
+    opacity: 0.5;
   }
 }

@@ -97,7 +97,7 @@ const AddNewTransactionModal = ({ isOpened, handleClose }) => {
   };
 
   return (
-    <Modal isOpened={isOpened} title="Добавить данные" handleClose={onCloseModal}>
+    <Modal isOpened={isOpened} title="Изменить данные" handleClose={onCloseModal}>
       <div className={styles.buttonsWrapper}>
         <Box mr={24}>
           <Button bgColor={transactionType === 'expense' ? 'brand' : 'glass'} onClick={changeToExpense}>

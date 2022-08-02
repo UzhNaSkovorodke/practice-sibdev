@@ -92,6 +92,7 @@ const RegisterForm = () => {
 
       <Box ml={100}>
         <Button
+          radius={1000}
           isDisabled={
             !username || !email || !isAgree || !password || !!usernameError || !!emailError || !!passwordError
           }

@@ -1,38 +1,45 @@
-import { defaultInputStyles } from 'src/components/DefaultInput/DefaultInput';
-import { classnames } from 'src/utils';
+import { useState } from 'react';
 
-import { defaultTableInputStyles } from '../TableDefaultInput/TableDefaultInput';
+import { ArrowIcon } from 'src/assets/icons';
 
 import styles from './TableSelectInput.module.scss';
 
 const TableSelectInput = ({ value, isError, emptyListText, placeholder, selectOptions, onChange }) => {
+  const [isShow, setisShow] = useState(false);
+  const [chosenOption, setchosenOption] = useState();
+
+  const toggleIsOpen = () => {
+    setisShow(!isShow);
+  };
   return (
-    <select
-      value={value}
-      disabled={!selectOptions.length}
-      className={classnames([
-        defaultTableInputStyles.input,
-        styles.selector,
-        [defaultInputStyles.input__error, isError],
-        [styles.defaultOption, !value],
-      ])}
-      onChange={onChange}
-    >
-      {selectOptions.length > 0 ? (
-        <>
-          <option value="" className={styles.choosedOption}>
-            {placeholder}
-          </option>
-          {selectOptions.map((item) => (
-            <option key={item.id} value={item.id} className={styles.choosedOption}>
-              {item.name}
-            </option>
-          ))}
-        </>
-      ) : (
-        <option className={styles.defaultOption}>{emptyListText}</option>
+    <div className={styles.inputWrapper}>
+      <ArrowIcon className={styles.input__icon} />
+      <button
+        value={chosenOption}
+        disabled={!selectOptions.length}
+        id="myButton"
+        className={styles.myButton}
+        onClick={toggleIsOpen}
+      >
+        {chosenOption || placeholder}
+      </button>
+      {isShow && (
+        <ul id="optionWrapper" className={styles.optionWrapper}>
+          {selectOptions.map((item) => {
+            const onItemClick = (event) => {
+              onChange(event);
+              setchosenOption(item.name);
+              setisShow(!isShow);
+            };
+            return (
+              <li key={item.id} value={item.id} className={styles.choosedOption} onClick={onItemClick}>
+                {item.name}
+              </li>
+            );
+          })}
+        </ul>
       )}
-    </select>
+    </div>
   );
 };
 

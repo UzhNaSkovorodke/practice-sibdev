@@ -1,3 +1,4 @@
+import { VectorIcon } from 'src/assets/icons';
 import { defaultInputStyles } from 'src/components/DefaultInput/DefaultInput';
 import { classnames } from 'src/utils';
 
@@ -14,21 +15,26 @@ const TableDefaultInput = ({
   maxLength,
   extraClasses,
   onChange,
+  radius,
 }) => {
   return (
-    <input
-      type={type}
-      value={value}
-      maxLength={maxLength}
-      className={classnames([
-        styles.input,
-        extraClasses,
-        [defaultInputStyles.input__error, isError],
-        styles[`input__align-${textAlign}`],
-      ])}
-      placeholder={placeholder}
-      onChange={onChange}
-    />
+    <div className={styles.inputWrapper}>
+      <VectorIcon className={styles.inputIcon} />
+      <input
+        type={type}
+        value={value}
+        maxLength={maxLength}
+        className={classnames([
+          styles.input,
+          extraClasses,
+          [defaultInputStyles.input__error, isError],
+          styles[`input__align-${textAlign}`],
+          styles[`input-border__${radius}`],
+        ])}
+        placeholder={placeholder}
+        onChange={onChange}
+      />
+    </div>
   );
 };
 

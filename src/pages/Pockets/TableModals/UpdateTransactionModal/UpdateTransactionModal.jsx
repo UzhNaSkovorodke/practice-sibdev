@@ -75,7 +75,12 @@ const UpdateTransactionModal = ({ item, isOpened, handleClose }) => {
           value={category}
           onChange={handleCategoryChange}
         />
-        <TableAmountInput isError={isAmountError} value={amount} placeholder="Сумма" onChange={handleAmountChange} />
+        <TableAmountInput
+          isError={isAmountError}
+          value={Math.round(amount)}
+          placeholder="Сумма"
+          onChange={handleAmountChange}
+        />
       </div>
       <Button radius={0} height={53} variant="brand" onClick={handleUpdateTransaction}>
         <Text weight={700} size="xl" color="contrast">

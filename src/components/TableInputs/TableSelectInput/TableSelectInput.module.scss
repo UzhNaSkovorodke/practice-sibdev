@@ -1,9 +1,20 @@
 @use '../../../assets/styles/colors';
 
+.input__icon {
+  width: 10px;
+  height: 7px;
+  position: absolute;
+  right: 14px;
+  top: 19px;
+  z-index: 2;
+}
 .selector {
   -moz-appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
+  width: 224px;
+  border-left: none;
+  border-right: none;
   &:disabled {
     color: black;
     cursor: default;
@@ -12,9 +23,57 @@
 
 .choosedOption {
   text-align: center;
+  background: #15171c;
+  cursor: pointer;
+  height: 37px;
+  width: 280px;
+  border: solid 1px #22242c;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background: #1f2229;
+  }
 }
 
 .defaultOption {
   text-align: center;
-  color: colors.$default;
+  color: colors.$white;
+}
+
+.input__icon {
+  width: 10px;
+  height: 7px;
+  position: absolute;
+  right: 14px;
+  top: 19px;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.myButton {
+  width: 224px;
+  height: 44px;
+  font-size: 16px;
+  border-right: none;
+  border-left: none;
+  background: #17181c;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  position: relative;
+}
+.optionWrapper {
+  display: block;
+  background: #15171c;
+  position: absolute;
+  width: 280px;
+  top: 48px;
+  right: 0px;
+  box-shadow: 0px 12px 33px -8px rgba(48, 24, 134, 0.413);
 }
