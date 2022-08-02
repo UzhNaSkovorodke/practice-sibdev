@@ -9,12 +9,7 @@ const TableSelectInput = ({ value, isError, emptyListText, placeholder, selectOp
   const [chosenOption, setchosenOption] = useState();
 
   const toggleIsOpen = () => {
-    isShow === true ? setisShow(false) : setisShow(true);
-  };
-  const changeCategory = (event) => {
-    setchosenOption(event.target.textContent);
     setisShow(!isShow);
-    onChange(event);
   };
   return (
     <div className={styles.inputWrapper}>
@@ -30,11 +25,18 @@ const TableSelectInput = ({ value, isError, emptyListText, placeholder, selectOp
       </button>
       {isShow && (
         <ul id="optionWrapper" className={styles.optionWrapper}>
-          {selectOptions.map((item, index) => (
-            <li key={index} value={item.id} onClick={changeCategory} className={styles.choosedOption}>
-              {item.name}
-            </li>
-          ))}
+          {selectOptions.map((item) => {
+            const onItemClick = (event) => {
+              onChange(event);
+              setchosenOption(item.name);
+              setisShow(!isShow);
+            };
+            return (
+              <li key={item.id} value={item.id} className={styles.choosedOption} onClick={onItemClick}>
+                {item.name}
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>
