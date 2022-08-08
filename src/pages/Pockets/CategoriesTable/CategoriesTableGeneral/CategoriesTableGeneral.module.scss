@@ -1,0 +1,21 @@
+.leftColumnCategories {
+  width: 297px;
+  height: 281px;
+  border-right: 4px solid #17181c;
+}
+
+.leftColumnIconWrapper {
+  width: 123px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.circleDiagramWrapper {
+  width: 277px;
+  height: 118px;
+  background: #17181c;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,9 +1,11 @@
 import { useState } from 'react';
 
-import { AddIcon } from 'src/assets/icons';
-import { Button, Box, Text } from 'src/components';
+import { ElipseIcon, PlusIcon } from 'src/assets/icons';
+import { Button, Text, Box } from 'src/components';
 
 import { AddNewCategoryModal } from '../../TableModals';
+
+import styles from './CategoriesTableHeader.module.scss';
 
 const AddCategoryButton = () => {
   const [isOpened, setIsOpened] = useState(false);
@@ -16,13 +18,18 @@ const AddCategoryButton = () => {
 
   return (
     <>
-      <Button variant="ghost" onClick={openModal}>
-        <Box mr={12}>
-          <Text color="brand" size="xxs">
-            Добавить
+      <Button onClick={openModal}>
+        <div className={styles.addButtonWrapper}>
+          <Text color="brand" size="s" weight={400}>
+            Добавить категорию
           </Text>
-        </Box>
-        <AddIcon />
+          <Box mr={8} mt={6} ml={6}>
+            <ElipseIcon />
+          </Box>
+          <div>
+            <PlusIcon className={styles.plusIcon} />
+          </div>
+        </div>
       </Button>
       <AddNewCategoryModal isOpened={isOpened} handleClose={handleClose} />
     </>

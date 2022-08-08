@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { AddIcon } from 'src/assets/icons';
-import { Box, Button, Text } from 'src/components';
+import { ElipseBrandIcon, FootButtonIcon, WhitePlusIcon } from 'src/assets/icons';
+import { Box, Button } from 'src/components';
 
 import { AddNewTransactionModal } from '../../TableModals';
+
+import styles from './TableHeaderAddTransactionButton.module.scss';
 
 const TableHeaderAddTransactionButton = () => {
   const transactions = useSelector((state) => state.transactions.list);
@@ -20,13 +22,12 @@ const TableHeaderAddTransactionButton = () => {
 
   return (
     <>
-      <Button variant="ghost" onClick={openModal}>
-        <Box mr={12}>
-          <Text color="brand" size="xxs">
-            Добавить
-          </Text>
-        </Box>
-        <AddIcon />
+      <Button onClick={openModal}>
+        <div className={styles.ButtonIconWrapper}>
+          <FootButtonIcon className={styles.FootButtonIcon} />
+          <ElipseBrandIcon className={styles.ElipseBrandIcon} />
+          <WhitePlusIcon className={styles.WhitePlusIcon} />
+        </div>
       </Button>
       <AddNewTransactionModal isOpened={isOpened} handleClose={handleClose} />
     </>

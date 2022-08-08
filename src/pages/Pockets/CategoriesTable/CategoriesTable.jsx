@@ -7,7 +7,9 @@ import { AddNewCategoryModal } from '../TableModals';
 
 import styles from './CategoriesTable.module.scss';
 import CategoriesTableBody from './CategoriesTableBody';
+import CategoriesTableGeneral from './CategoriesTableGeneral';
 import CategoriesTableHeader from './CategoriesTableHeader';
+import AddCategoryButton from './CategoriesTableHeader/AddCategoryButton';
 
 const CategoriesTable = () => {
   const [isOpened, setIsOpened] = useState(false);
@@ -19,14 +21,20 @@ const CategoriesTable = () => {
   return (
     <div className={styles.wrapper}>
       <CategoriesTableHeader />
-      {!!categories.length ? (
-        <CategoriesTableBody />
-      ) : (
-        <>
-          <EmptyList height={407} text="Категория" onClick={handleOpen} />
-          <AddNewCategoryModal isOpened={isOpened} handleClose={handleClose} />
-        </>
-      )}
+      <div className={styles.categoriesTableBodyWrapper}>
+        <CategoriesTableGeneral />
+        <div className={styles.rightColumnCategories}>
+          {!!categories.length ? (
+            <CategoriesTableBody />
+          ) : (
+            <>
+              <EmptyList height={407} text="Категория" onClick={handleOpen} />
+              <AddNewCategoryModal isOpened={isOpened} handleClose={handleClose} />
+            </>
+          )}
+          {!!categories.length && <AddCategoryButton />}
+        </div>
+      </div>
     </div>
   );
 };

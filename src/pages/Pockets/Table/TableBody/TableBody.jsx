@@ -33,22 +33,24 @@ const TableBody = ({ rows, getTableBodyProps, prepareRow }) => {
 
   return (
     <tbody ref={bodyRef} {...restTableProps} className={classnames([styles.body, tableClassName])}>
-      {rows.map((row) => {
-        prepareRow(row);
-        const { className: rowClassName, ...restRowProps } = row.getRowProps();
-        return (
-          <tr {...restRowProps} className={classnames([styles.row, rowClassName])}>
-            {row.cells.map((cell) => {
-              const { className: cellClassName, ...restCellProps } = cell.getCellProps();
-              return (
-                <td className={classnames([styles.cell, cellClassName])} {...restCellProps}>
-                  <div className={styles.cellItem}>{cell.render('Cell')}</div>
-                </td>
-              );
-            })}
-          </tr>
-        );
-      })}
+      <div className={styles.rowsWrapper}>
+        {rows.map((row) => {
+          prepareRow(row);
+          const { className: rowClassName, ...restRowProps } = row.getRowProps();
+          return (
+            <tr {...restRowProps} className={classnames([styles.row, rowClassName])}>
+              {row.cells.map((cell) => {
+                const { className: cellClassName, ...restCellProps } = cell.getCellProps();
+                return (
+                  <td className={classnames([styles.cell, cellClassName])} {...restCellProps}>
+                    <div className={styles.cellItem}>{cell.render('Cell')}</div>
+                  </td>
+                );
+              })}
+            </tr>
+          );
+        })}
+      </div>
     </tbody>
   );
 };

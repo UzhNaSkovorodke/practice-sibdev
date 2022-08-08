@@ -1,9 +1,17 @@
 .wrapper {
-  width: 300px;
-  max-height: 100%;
-  padding: 6px 0 0 30px;
-  border-radius: 10px;
-  box-shadow: 1px 8px 25px 0px hsla(0, 0%, 66%, 0.13);
+  width: 663px;
+  height: 404px;
+  padding: 24px 0 0 16px;
+  background: linear-gradient(145.94deg, #1d2023 1.45%, #22242c 93.91%);
+  border-radius: 24px;
   display: flex;
   flex-direction: column;
+}
+.rightColumnCategories {
+  margin-left: 22px;
+  width: 308px;
+}
+.categoriesTableBodyWrapper {
+  display: flex;
+  flex-wrap: wrap;
 }
