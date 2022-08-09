@@ -8,17 +8,10 @@ import styles from './CategoriesTableHeader.module.scss';
 import monthList from './monthHelper';
 
 const CategoriesTableHeader = () => {
-  const [currrentYear, setCurrrentYear] = useState(0);
-  const [currrentMonth, setCurrrentMonth] = useState(0);
+  const date = new Date();
+  const [currrentYear, setCurrrentYear] = useState(date.getFullYear());
+  const [currrentMonth, setCurrrentMonth] = useState(date.getMonth());
 
-  const dateDefine = () => {
-    setCurrrentYear(new Date().getFullYear());
-    setCurrrentMonth(new Date().getMonth());
-  };
-
-  useEffect(() => {
-    dateDefine();
-  });
   return (
     <div className={styles.wrapper}>
       <Text size="l" color="white" weight={700}>
