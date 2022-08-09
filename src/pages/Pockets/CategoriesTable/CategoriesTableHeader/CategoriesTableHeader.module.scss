@@ -6,11 +6,6 @@
   justify-content: space-between;
   align-items: center;
 }
-.operateButtonsWrapper {
-  width: 219px;
-  display: flex;
-  justify-content: space-between;
-}
 .addButtonWrapper {
   width: 308px;
   height: 40px;
@@ -25,4 +20,9 @@
   position: absolute;
   left: 221px;
   top: 14px;
+}
+.operateButtonsWrapper {
+  width: 219px;
+  display: flex;
+  justify-content: space-between;
 }

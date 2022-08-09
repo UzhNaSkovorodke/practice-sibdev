@@ -1,49 +1,32 @@
-import { LeftArrowIcon, RightArrowIcon } from 'src/assets/icons';
-import { Text, Button, Box } from 'src/components';
+import { useState, useEffect } from 'react';
+
+import { Text } from 'src/components';
+
+import CategoriesTableHeaderButtons from '../CategoriesTableHeaderButtons';
 
 import styles from './CategoriesTableHeader.module.scss';
+import monthList from './monthHelper';
 
 const CategoriesTableHeader = () => {
-  let currentMonth = new Date()
-    .toLocaleDateString('ru-RU', {
-      month: 'long',
-    })
-    .split(' ')
-    .join(' ');
-  let currentYear = new Date()
-    .toLocaleDateString('ru-RU', {
-      year: 'numeric',
-    })
-    .split(' ')
-    .join(' ');
+  const [currrentYear, setCurrrentYear] = useState(0);
+  const [currrentMonth, setCurrrentMonth] = useState(0);
+
+  const dateDefine = () => {
+    setCurrrentYear(new Date().getFullYear());
+    setCurrrentMonth(new Date().getMonth());
+  };
+
+  useEffect(() => {
+    dateDefine();
+  });
   return (
     <div className={styles.wrapper}>
       <Text size="l" color="white" weight={700}>
         Статистика
       </Text>
       <div className={styles.operateButtonsWrapper}>
-        <Button variant="operate" radius={1000}>
-          <Box mr={13}>
-            <LeftArrowIcon />
-          </Box>
-          <Text color="white" weight={600} size="s">
-            {currentMonth[0].toUpperCase() + currentMonth.slice(1)}
-          </Text>
-          <Box ml={13}>
-            <RightArrowIcon />
-          </Box>
-        </Button>
-        <Button variant="operate" radius={1000}>
-          <Box mr={13}>
-            <LeftArrowIcon />
-          </Box>
-          <Text color="white" weight={600} size="s">
-            {currentYear}
-          </Text>
-          <Box ml={13}>
-            <RightArrowIcon />
-          </Box>
-        </Button>
+        <CategoriesTableHeaderButtons date={monthList[currrentMonth]} />
+        <CategoriesTableHeaderButtons date={String(currrentYear)} />
       </div>
     </div>
   );

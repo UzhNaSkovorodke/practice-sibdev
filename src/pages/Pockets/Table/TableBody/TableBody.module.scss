@@ -2,13 +2,10 @@
 
 .body {
   width: 100%;
-  max-height: 420px;
   border-radius: 0 0 10px 10px;
   scrollbar-width: thin;
   display: flex;
   flex-direction: column;
-}
-.rowsWrapper {
   height: 240px;
   overflow: auto;
 }

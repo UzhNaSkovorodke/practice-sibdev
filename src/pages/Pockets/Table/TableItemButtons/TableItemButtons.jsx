@@ -29,8 +29,6 @@ const TableItemButtons = ({ item }) => {
         <Button onClick={handleDelete}>
           <ElipseGreyIcon />
         </Button>
-        {/* <Button variant="ghost" onClick={handleEdit}></Button> */}
-        {/* <Button variant="ghost" onClick={handleDelete}></Button> */}
       </div>
       <AddNewOrUpdateTransactionModal transaction={item} isOpened={isEditOpened} handleClose={handleEditClose} />
       <DeleteTransactionModal itemId={item.id} isOpened={isDeleteOpened} handleClose={handleDeleteClose} />

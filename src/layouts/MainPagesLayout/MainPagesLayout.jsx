@@ -1,20 +1,8 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
 import { Box, Text } from 'src/components';
-import { getTotalAmounts } from 'src/store/slices/transactionsSlice';
 
 import styles from './MainPagesLayout.module.scss';
 
 const MainPagesLayout = ({ pageName, leftColumnChildren }) => {
-  const dispatch = useDispatch();
-
-  const totalExpenses = useSelector((state) => state.transactions.totalExpenses);
-  const totalIncome = useSelector((state) => state.transactions.totalIncome);
-
-  useEffect(() => {
-    dispatch(getTotalAmounts());
-  });
   return (
     <div className={styles.wrapper}>
       <div className={styles.leftColumn}>
@@ -26,7 +14,7 @@ const MainPagesLayout = ({ pageName, leftColumnChildren }) => {
           </Box>
           <Box>
             <Text weight={700} size="xxl" color="white">
-              {String(Number(totalIncome) - Number(totalExpenses))}
+              300000
             </Text>
             <Text size="xs" color="whiteOpacity">
               На счету
