@@ -1,11 +1,10 @@
 .headerWrapper {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 23px;
+  padding-bottom: 16px;
 }
 
 .contentWrapper {
-  padding-right: 30px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -16,23 +15,30 @@
 .categoryItem {
   min-width: 240px;
   display: flex;
-  justify-content: space-between;
-  &:last-child .categoryItemColumn {
-    padding-bottom: 18px;
-  }
+  background: #17181c;
+  border-bottom: 2px solid #22242c;
 }
-
+.categoryHeaderItem {
+  min-width: 240px;
+  display: flex;
+  background: #17181c;
+  border-bottom: 2px solid #22242c;
+  border-radius: 12px 12px 0px 0px;
+}
 .categoryItemColumn {
-  width: 125px;
-  padding-bottom: 11px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 11px;
+}
+.categorySumColumn {
+  width: 100%;
+}
+.categoryHeaderSumColumn {
+  width: 100%;
+  border-right: 20px;
 }
 
 .rightColumnItem {
-  border-left: 1px solid hsla(210, 16%, 93%, 1);
-  display: flex;
-  justify-content: flex-end;
-}
-
-.rightColumnItemText {
-  width: 90px;
+  height: 40px;
 }

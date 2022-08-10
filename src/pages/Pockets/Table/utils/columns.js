@@ -1,35 +1,29 @@
 import { Text } from 'src/components';
 
-import TableHeaderAddTransactionButton from '../TableHeaderAddTransactionButton';
-
 const columns = [
   {
     Header: (
-      <Text color="primary" weight={600} size="xs" align="center">
-        ДАТА
+      <Text color="primary" weight={400} size="s" align="center">
+        Дата
       </Text>
     ),
     accessor: 'date',
   },
   {
     Header: (
-      <Text color="primary" weight={600} size="xs" align="center">
-        КАТЕГОРИЯ
+      <Text color="primary" weight={400} size="s" align="center">
+        Категория
       </Text>
     ),
     accessor: 'category',
   },
   {
     Header: (
-      <Text color="primary" weight={600} size="xs" align="center">
-        СУММА
+      <Text color="primary" weight={400} size="s" align="center">
+        Сумма
       </Text>
     ),
     accessor: 'amount',
-  },
-  {
-    Header: <TableHeaderAddTransactionButton />,
-    accessor: 'buttons',
   },
 ];
 

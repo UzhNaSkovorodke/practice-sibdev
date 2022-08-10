@@ -58,13 +58,13 @@
 }
 
 .myButton {
-  width: 224px;
+  width: 218px;
   height: 44px;
   font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-right: none;
   border-left: none;
   background: #17181c;
-  border: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
   position: relative;
 }

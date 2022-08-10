@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { EditIcon, TrashIcon } from 'src/assets/icons';
+import { ElipseGreyIcon } from 'src/assets/icons';
 import { Button } from 'src/components';
 
 import { DeleteTransactionModal } from '../../TableModals';
@@ -26,11 +26,8 @@ const TableItemButtons = ({ item }) => {
   return (
     <>
       <div className={styles.wrapper}>
-        <Button variant="ghost" onClick={handleEdit}>
-          <EditIcon />
-        </Button>
-        <Button variant="ghost" onClick={handleDelete}>
-          <TrashIcon />
+        <Button onClick={handleDelete}>
+          <ElipseGreyIcon />
         </Button>
       </div>
       <AddNewOrUpdateTransactionModal transaction={item} isOpened={isEditOpened} handleClose={handleEditClose} />

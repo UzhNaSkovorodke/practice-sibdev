@@ -1,9 +1,19 @@
 .wrapper {
-  width: 540px;
+  width: 466px;
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
+  border-radius: 24px;
+}
+
+.iconsWrapper {
+  position: relative;
+}
+
+.addButtonsWrapper {
+  position: absolute;
+  bottom: 40px;
 }

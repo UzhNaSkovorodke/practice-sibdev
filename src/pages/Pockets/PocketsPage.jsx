@@ -6,7 +6,6 @@ import { getCategories } from 'src/store/slices/categoriesSlice';
 import { getTransactions } from 'src/store/slices/transactionsSlice';
 
 import CategoriesTable from './CategoriesTable';
-import CommonInformation from './CommonInformation';
 import styles from './PocketsPage.module.scss';
 import Table from './Table';
 
@@ -19,14 +18,15 @@ const PocketsPage = () => {
   }, [dispatch]);
   return (
     <MainPagesLayout
-      pageName="Карманы"
+      pageName="Операции"
       leftColumnChildren={
         <div className={styles.leftColumnWrapper}>
-          <Table />
           <CategoriesTable />
+          <div className={styles.tableWrapper}>
+            <Table />
+          </div>
         </div>
       }
-      rightColumnChildren={<CommonInformation />}
     />
   );
 };

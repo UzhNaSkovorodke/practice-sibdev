@@ -1,19 +1,26 @@
-import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
 
 import { Text } from 'src/components';
 
-import AddCategoryButton from './AddCategoryButton';
+import CategoriesTableHeaderButtons from '../CategoriesTableHeaderButtons';
+
 import styles from './CategoriesTableHeader.module.scss';
+import monthList from './monthHelper';
 
 const CategoriesTableHeader = () => {
-  const categories = useSelector((state) => state.categories.list);
+  const date = new Date();
+  const [currrentYear, setCurrrentYear] = useState(date.getFullYear());
+  const [currrentMonth, setCurrrentMonth] = useState(date.getMonth());
 
   return (
     <div className={styles.wrapper}>
-      <Text as="h3" color="default">
-        Категории
+      <Text size="l" color="white" weight={700}>
+        Статистика
       </Text>
-      {!!categories.length && <AddCategoryButton />}
+      <div className={styles.operateButtonsWrapper}>
+        <CategoriesTableHeaderButtons date={monthList[currrentMonth]} />
+        <CategoriesTableHeaderButtons date={String(currrentYear)} />
+      </div>
     </div>
   );
 };

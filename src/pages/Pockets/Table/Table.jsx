@@ -9,6 +9,8 @@ import { AddNewTransactionModal } from '../TableModals';
 import styles from './Table.module.scss';
 import TableBody from './TableBody';
 import TableHeader from './TableHeader';
+import TableHeaderAddTransactionButton from './TableHeaderAddTransactionButton';
+import TableTitle from './TableTitle';
 import { columns, processServerDataIntoTableData } from './utils';
 
 const Table = () => {
@@ -25,6 +27,7 @@ const Table = () => {
 
   return (
     <div className={styles.wrapper}>
+      <TableTitle />
       <table {...getTableProps()} className={styles.table}>
         <TableHeader headerGroups={headerGroups} />
         {!!transactions.length && (
@@ -37,6 +40,11 @@ const Table = () => {
           <AddNewTransactionModal isOpened={isOpened} handleClose={handleClose} />
         </>
       )}
+      <div className={styles.iconsWrapper}>
+        <div className={styles.addButtonsWrapper}>
+          <TableHeaderAddTransactionButton />
+        </div>
+      </div>
     </div>
   );
 };
