@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { balanceRequest } from 'src/store/slices/balanceSlice';
 
 import { Text } from 'src/components';
-import { balanceRequest } from 'src/store/slices/counterSlice';
 
 export const BalanceInformation = () => {
   const dispatch = useDispatch();
-  const countNumb = useSelector((state) => state.counter.counter);
+  const countNumb = useSelector((state) => state.balance.balance);
 
   useEffect(() => {
     dispatch(balanceRequest());

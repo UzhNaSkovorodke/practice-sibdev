@@ -3,19 +3,18 @@ import { createSlice } from '@reduxjs/toolkit';
 import { balanceRequest } from 'src/store/slices/userActions';
 
 const initialState = {
-  counter: 0,
+  balance: 0,
 };
 
-export const counterSlice = createSlice({
-  name: 'counter',
+export const balanceSlice = createSlice({
+  name: 'balance',
   initialState,
   extraReducers: {
     [balanceRequest.fulfilled]: (state, action) => {
-      state.counter = action.payload;
+      state.balance = action.payload;
     },
   },
 });
 
-export const { increment, decrement } = counterSlice.actions;
 export { balanceRequest };
-export default counterSlice.reducer;
+export default balanceSlice.reducer;
