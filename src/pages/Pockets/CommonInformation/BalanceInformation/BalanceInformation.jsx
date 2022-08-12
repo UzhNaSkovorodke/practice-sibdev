@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { balanceRequest } from 'src/store/slices/balanceSlice';
 
 import { Text } from 'src/components';
+import { balanceRequest } from 'src/store/slices/balanceSlice';
 
 export const BalanceInformation = () => {
   const dispatch = useDispatch();
