@@ -44,7 +44,7 @@ const DeleteTransactionModal = ({ itemId, isOpened, handleClose }) => {
             <Text weight={500} size="xl" color="contrast">
               Удалить
             </Text>
-          </Button>{' '}
+          </Button>
         </Box>
       </div>
     </Modal>

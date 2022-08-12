@@ -1,4 +1,5 @@
 import { Box, Text } from 'src/components';
+import { BalanceInformation } from 'src/pages/Pockets/CommonInformation/BalanceInformation/BalanceInformation';
 
 import styles from './MainPagesLayout.module.scss';
 
@@ -13,12 +14,7 @@ const MainPagesLayout = ({ pageName, leftColumnChildren }) => {
             </Text>
           </Box>
           <Box>
-            <Text weight={700} size="xxl" color="white">
-              300000
-            </Text>
-            <Text size="xs" color="whiteOpacity">
-              На счету
-            </Text>
+            <BalanceInformation />
           </Box>
         </div>
         {leftColumnChildren}

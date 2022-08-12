@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { ElipseBrandIcon, FootButtonIcon, WhitePlusIcon } from 'src/assets/icons';
-import { Box, Button } from 'src/components';
+import { Button } from 'src/components';
 
 import { AddNewTransactionModal } from '../../TableModals';
 

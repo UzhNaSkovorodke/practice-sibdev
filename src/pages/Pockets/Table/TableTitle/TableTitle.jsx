@@ -1,3 +1,4 @@
+import { ExportIcon, ImportIcon } from 'src/assets/icons';
 import { Box, Text } from 'src/components';
 
 import { TableImportExport } from '../TableImportExport/TableImportExport';
@@ -11,7 +12,15 @@ const TableTitle = () => {
         <Text size="l" weight={700} color="white">
           Операции
         </Text>
-        <TableImportExport />
+
+        <div style={{ display: 'flex' }}>
+          <Box ml={89}>
+            <TableImportExport icon={<ImportIcon />} textValue="Импорт" />
+          </Box>
+          <Box ml={7}>
+            <TableImportExport icon={<ExportIcon />} textValue="Экспорт" />
+          </Box>
+        </div>
       </div>
     </Box>
   );
